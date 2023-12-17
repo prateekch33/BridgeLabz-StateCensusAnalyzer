@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class Main {
@@ -13,6 +14,11 @@ public class Main {
         List<String[]> loadedData = stateCensusAnalyser.getStateData();
         for (String[] row : loadedData) {
             System.out.println(String.join(", ", row));
+        }
+
+        List<String> loadedStateCodeData = stateCensusAnalyser.getStateCodeData();
+        for (String row : loadedStateCodeData) {
+            System.out.println(row);
         }
     }
 }

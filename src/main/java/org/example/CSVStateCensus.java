@@ -35,13 +35,13 @@ public class CSVStateCensus implements Iterable<String[]> {
 
                 reader = new BufferedReader(new FileReader(file));
                     char expectedDelimiter=',';
-                    String firstLine = reader.readLine();
+//                    String firstLine = reader.readLine();
                     String expectedHeader = "SrNo,StateName,TIN,StateCode";
                     String actualHeader = reader.readLine();
                     if (actualHeader == null || !actualHeader.equals(expectedHeader)) {
                         throw new StateCensusException("Invalid header. Expected: " + expectedHeader);
                     }
-                    if (firstLine != null && !firstLine.contains(String.valueOf(expectedDelimiter))) {
+                    if (actualHeader != null && !actualHeader.contains(String.valueOf(expectedDelimiter))) {
                         throw new StateCensusException("Invalid delimiter. Expected: " + expectedDelimiter);
                     }
 
